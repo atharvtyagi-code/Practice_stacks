@@ -1,37 +1,61 @@
-class Stacks():
+class Queue:
     def __init__(self):
-        self.stacks = []
+        self.queue = []
+    
+    def enqueue(self):
+        num = int(input("How many datas in the list: "))
 
-    def push(self):
-        n = int(input("How many words in the list: "))
+        for i in range(num):
+            n = input("Add a data in the list: ")
+            self.queue.append(n)
 
-        for i in range(n):
-            num = str(input("Add a word in the list: "))
-            self.stacks.append(num)
+        print(self.queue)
 
-        print(self.stacks)
+    def dequeue(self):
+        if len(self.queue) == 0:
+            print("There is nothing to remove from the list!")
 
-    def pop(self):
-        self.stacks.pop()
-        print(self.stacks)
+        else:
+            self.queue.pop(0)
+            print(self.queue)
 
     def peek(self):
-        print(self.stacks[-1])
+        if len(self.queue) == 0:
+            print("There is nothing to print.")
+
+        else:
+            print(self.queue[0])
 
     def isEmpty(self):
-        if len(self.stacks) == 0:
+        if len(self.queue) == 0:
             print("It's empty!")
 
         else:
             print("It's full!")
 
     def size(self):
-        print(len(self.stacks))
+        print(len(self.queue))
 
-stack = Stacks()
+    def front(self):
+        if len(self.queue) == 0:
+            print("There is nothing in the list!")
 
-stack.push()
-stack.pop()
-stack.peek()
-stack.isEmpty()
-stack.size()
+        else:
+            print(self.queue[0])
+
+    def rear(self):
+        if len(self.queue) == 0:
+            print("There is nothing in the list!")
+
+        else:
+            print(self.queue[-1])
+
+
+queues = Queue()
+queues.enqueue()
+queues.dequeue()
+queues.peek()
+queues.isEmpty()
+queues.size()
+queues.front()
+queues.rear()
